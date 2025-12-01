@@ -1,0 +1,203 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* KiddoFinance Design System - Fun & Colorful! */
+
+@layer base {
+  :root {
+    --background: 350 100% 98%;
+    --foreground: 280 15% 9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 280 15% 9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 280 15% 9%;
+
+    --primary: 280 80% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 60 100% 85%;
+    --secondary-foreground: 280 15% 9%;
+
+    --muted: 320 40% 95%;
+    --muted-foreground: 280 15% 46%;
+
+    --accent: 200 100% 80%;
+    --accent-foreground: 280 15% 9%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 320 40% 91%;
+    --input: 320 40% 91%;
+    --ring: 280 80% 60%;
+
+    --radius: 1rem;
+
+    /* Fun Colors */
+    --fun-pink: 330 100% 70%;
+    --fun-blue: 200 100% 70%;
+    --fun-yellow: 50 100% 70%;
+    --fun-green: 120 100% 70%;
+    --fun-orange: 30 100% 70%;
+    --fun-purple: 280 100% 70%;
+  }
+
+  .dark {
+    --background: 280 15% 9%;
+    --foreground: 350 100% 98%;
+
+    --card: 280 15% 9%;
+    --card-foreground: 350 100% 98%;
+
+    --popover: 280 15% 9%;
+    --popover-foreground: 350 100% 98%;
+
+    --primary: 280 80% 60%;
+    --primary-foreground: 0 0% 98%;
+
+    --secondary: 280 15% 17%;
+    --secondary-foreground: 350 100% 98%;
+
+    --muted: 280 15% 17%;
+    --muted-foreground: 350 40% 65%;
+
+    --accent: 280 15% 17%;
+    --accent-foreground: 350 100% 98%;
+
+    --destructive: 0 62% 30%;
+    --destructive-foreground: 350 100% 98%;
+
+    --border: 280 15% 17%;
+    --input: 280 15% 17%;
+    --ring: 280 80% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-gradient-to-br from-pink-100 via-purple-50 to-blue-100 text-foreground font-fredoka;
+    min-height: 100vh;
+  }
+}
+
+@layer utilities {
+  .font-fredoka {
+    font-family: 'Fredoka', cursive;
+  }
+  
+  .font-pacifico {
+    font-family: 'Pacifico', cursive;
+  }
+
+  .fun-pink {
+    color: hsl(var(--fun-pink));
+  }
+  
+  .fun-blue {
+    color: hsl(var(--fun-blue));
+  }
+  
+  .fun-yellow {
+    color: hsl(var(--fun-yellow));
+  }
+  
+  .fun-green {
+    color: hsl(var(--fun-green));
+  }
+  
+  .fun-orange {
+    color: hsl(var(--fun-orange));
+  }
+  
+  .fun-purple {
+    color: hsl(var(--fun-purple));
+  }
+
+  .bg-fun-pink {
+    background-color: hsl(var(--fun-pink));
+  }
+  
+  .bg-fun-blue {
+    background-color: hsl(var(--fun-blue));
+  }
+  
+  .bg-fun-yellow {
+    background-color: hsl(var(--fun-yellow));
+  }
+  
+  .bg-fun-green {
+    background-color: hsl(var(--fun-green));
+  }
+  
+  .bg-fun-orange {
+    background-color: hsl(var(--fun-orange));
+  }
+  
+  .bg-fun-purple {
+    background-color: hsl(var(--fun-purple));
+  }
+
+  .animate-bounce-slow {
+    animation: bounce 3s infinite;
+  }
+  
+  .animate-wiggle {
+    animation: wiggle 2s ease-in-out infinite;
+  }
+  
+  .animate-pulse-fun {
+    animation: pulse-fun 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes wiggle {
+    0%, 100% { transform: rotate(-3deg); }
+    50% { transform: rotate(3deg); }
+  }
+  
+  @keyframes pulse-fun {
+    0%, 100% { 
+      opacity: 1;
+      transform: scale(1);
+    }
+    50% { 
+      opacity: 0.8;
+      transform: scale(1.05);
+    }
+  }
+
+  .sparkle {
+    position: relative;
+  }
+  
+  .sparkle::before,
+  .sparkle::after {
+    content: '✨';
+    position: absolute;
+    animation: sparkle 2s ease-in-out infinite;
+  }
+  
+  .sparkle::before {
+    top: -10px;
+    left: -10px;
+    animation-delay: 0s;
+  }
+  
+  .sparkle::after {
+    bottom: -10px;
+    right: -10px;
+    animation-delay: 1s;
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 0; transform: scale(0.5); }
+    50% { opacity: 1; transform: scale(1); }
+  }
+}
